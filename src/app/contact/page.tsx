@@ -1,30 +1,43 @@
 import { config } from "@/data/config";
 import { Mail, Phone, MapPin, Zap, MessageSquare } from "lucide-react";
 import { GnomCard } from "@/components/ui/GnomCard";
+import Image from "next/image";
+
 
 export default function Page() {
     return (
         <div className="min-h-screen bg-white">
             {/* 1. Contact Hero */}
-            <section className="relative pt-32 md:pt-40 lg:pt-48 pb-20 md:pb-32 xl:pb-20 overflow-hidden bg-slate-900 text-white min-h-[60vh] flex items-center">
+            <section className="relative pt-24 md:pt-40 lg:pt-48 pb-12 md:pb-32 xl:pb-20 overflow-hidden bg-slate-900 text-white min-h-[40vh] md:min-h-[60vh] flex items-center">
                 {/* Background Decorative Elements */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-brand/10 blur-[120px] rounded-full translate-x-1/2" />
                     <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-brand-light/5 blur-[100px] rounded-full -translate-x-1/2" />
-                    <div className="absolute inset-0 opacity-[0.05] bg-[grid] mask-[linear-gradient(to_bottom,white,transparent)]"
-                        style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
-                    <div className="max-w-5xl">
+                    <div className="max-w-3xl">
                         <h1 className="font-black mb-10 leading-[0.9] tracking-tighter italic uppercase text-white">
-                            <span className="text-7xl md:text-9xl xl:text-8xl block mb-2">Let's</span>
+                            <span className="text-5xl md:text-9xl xl:text-8xl block mb-2">Let's</span>
                             <span className="text-brand text-3xl md:text-5xl block">Connect.</span>
                         </h1>
-                        <p className="text-xl md:text-3xl text-slate-300 leading-relaxed font-medium italic opacity-90 max-w-3xl">
+                        <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-medium italic opacity-90 max-w-2xl">
                             "Our expert technocrats are ready to bring intelligence to your mission."
                         </p>
                     </div>
+                </div>
+
+                {/* Hero Image - Absolute positioned to touch top and bottom */}
+                <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
+                    <Image
+                        src="/images/contact_hero.png"
+                        alt="Contact GNOM Engineering"
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                    {/* Subtle gradient overlay to blend left side */}
+                    <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-900/20 to-transparent" />
                 </div>
             </section>
 

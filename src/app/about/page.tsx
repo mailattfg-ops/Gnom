@@ -9,7 +9,7 @@ export default function Page() {
     return (
         <div className="min-h-screen bg-white">
             {/* 1. About Hero */}
-            <section className="relative pt-32 md:pt-40 lg:pt-48 pb-20 md:pb-32 xl:pb-20 overflow-hidden bg-slate-900 text-white min-h-[60vh] flex items-center">
+            <section className="relative pt-24 md:pt-40 lg:pt-48 pb-12 md:pb-32 xl:pb-20 overflow-hidden bg-slate-900 text-white min-h-[40vh] md:min-h-[60vh] flex items-center">
                 {/* Background Decorative Elements */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-brand/10 blur-[120px] rounded-full translate-x-1/2" />
@@ -21,7 +21,7 @@ export default function Page() {
                 <div className="container mx-auto px-6 relative z-10">
                     <div className="max-w-3xl">
                         <h1 className="font-black mb-10 leading-[0.9] tracking-tighter italic text-white uppercase">
-                            <span className="text-7xl md:text-9xl xl:text-8xl block mb-2">Engineering</span>
+                            <span className="text-5xl md:text-9xl xl:text-8xl block mb-2">Engineering</span>
                             <span className="text-brand text-3xl md:text-5xl block">Intelligence.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-medium italic opacity-90">

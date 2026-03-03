@@ -16,7 +16,7 @@ export function Hero() {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="max-w-3xl">
                     <h1 className="font-black mb-10 leading-[0.9] tracking-tighter italic">
-                        <span className="text-7xl md:text-9xl xl:text-8xl block mb-2">{heroData.title.main}</span>
+                        <span className="text-5xl md:text-9xl xl:text-8xl block mb-2">{heroData.title.main}</span>
                         <span className="text-brand uppercase text-3xl md:text-5xl block">{heroData.title.highlight}</span>
                     </h1>
 
