@@ -62,11 +62,15 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-brand shrink-0" />
-                                <span>{config.whatsappNumber}</span>
+                                <a href={`tel:${config.whatsappNumber.replace(/\s/g, "")}`} className="hover:text-brand transition-colors">
+                                    {config.whatsappNumber}
+                                </a>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-brand shrink-0" />
-                                <span>{config.email}</span>
+                                <a href={`mailto:${config.email}`} className="hover:text-brand transition-colors">
+                                    {config.email}
+                                </a>
                             </li>
                         </ul>
                     </div>

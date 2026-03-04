@@ -27,10 +27,7 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Determine if we should use light or dark text based on page and scroll
-    const isDarkBase = pathname === "/" || pathname === "/about" || pathname === "/services" || pathname === "/contact";
-    const useLightText = (isDarkBase && !scrolled) || scrolled; // In this design, we'll aim for a dark premium navbar when scrolled
-
+    
     return (
         <nav
             className={cn(
@@ -48,8 +45,8 @@ export function Navbar() {
                     </div>
                     <div className="flex flex-col -space-y-1">
                         <span className={cn(
-                            "text-2xl font-black tracking-tighter uppercase transition-colors duration-300",
-                            scrolled || isDarkBase ? "text-white" : "text-slate-900"
+                            "text-2xl font-black tracking-tighter uppercase transition-colors duration-300 text-white",
+
                         )}>
                             {config.companyName}<span className="text-brand">.</span>
                         </span>
@@ -64,8 +61,8 @@ export function Navbar() {
                             key={link.name}
                             href={link.href}
                             className={cn(
-                                "text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 hover:text-brand relative group/link",
-                                (scrolled || isDarkBase) ? "text-white/80" : "text-slate-600",
+                                "text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 hover:text-brand relative group/link text-white",
+
                                 pathname === link.href && "text-brand!"
                             )}
                         >
@@ -89,8 +86,7 @@ export function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     className={cn(
-                        "md:hidden transition-colors",
-                        scrolled || isDarkBase ? "text-white" : "text-slate-900"
+                        "md:hidden transition-colors text-white",
                     )}
                     onClick={() => setIsOpen(!isOpen)}
                 >

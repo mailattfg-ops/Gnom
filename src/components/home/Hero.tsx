@@ -3,6 +3,7 @@
 import { heroData } from "@/data/homeData";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
     return (
@@ -26,16 +27,22 @@ export function Hero() {
 
                     {/* CTAs */}
                     <div className="flex flex-wrap gap-8 items-center">
-                        <button className="group relative px-10 py-5 bg-brand text-white rounded-2xl font-black text-xl overflow-hidden transition-all hover:scale-105 active:scale-95 italic uppercase tracking-tighter">
+                        <Link
+                            href="/contact#inquiry-form"
+                            className="group relative px-10 py-5 bg-brand text-white rounded-2xl font-black text-xl overflow-hidden transition-all hover:scale-105 active:scale-95 italic uppercase tracking-tighter inline-flex items-center"
+                        >
                             <span className="relative z-10 flex items-center gap-2">
-                                Explore Expertise <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                                Start a Project <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                             </span>
                             <div className="absolute inset-0 bg-linear-to-r from-brand-dark to-brand opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </button>
+                        </Link>
 
-                        <button className="px-10 py-5 bg-white/5 backdrop-blur-md border-2 border-white/10 rounded-2xl font-black text-xl text-white transition-all hover:bg-white/10 hover:border-white/20 italic uppercase tracking-tighter">
-                            Our Clients
-                        </button>
+                        <Link
+                            href="/services"
+                            className="px-10 py-5 bg-white/5 backdrop-blur-md border-2 border-white/10 rounded-2xl font-black text-xl text-white transition-all hover:bg-white/10 hover:border-white/20 italic uppercase tracking-tighter inline-flex items-center"
+                        >
+                            View Our Services
+                        </Link>
                     </div>
                 </div>
             </div>

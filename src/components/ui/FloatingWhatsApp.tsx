@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { config } from "@/data/config";
 
 export function FloatingWhatsApp() {
-    const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/\D/g, '')}`;
+    const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Hello GNOM! I'm interested in your MEP engineering services.")}`;
 
     return (
         <a
