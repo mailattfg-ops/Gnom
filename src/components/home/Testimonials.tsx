@@ -7,7 +7,7 @@ import { Quote } from "lucide-react";
 
 export function Testimonials() {
     return (
-        <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white overflow-hidden">
+        <section className="py-6 lg:py-10 xl:py-12 bg-white overflow-hidden">
             <div className="container mx-auto px-6">
                 <SectionHeader
                     title="Client Testimonials"
@@ -15,7 +15,7 @@ export function Testimonials() {
                     align="center"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mt-16 md:mt-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mt-8 md:mt-10">
                     {testimonialsData.map((t, idx) => (
                         <GnomCard
                             key={idx}

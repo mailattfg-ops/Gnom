@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 
+import { BusinessFlow } from "@/components/about/BusinessFlow";
+
 export default function Page() {
     return (
         <div className="min-h-screen bg-white">
@@ -56,98 +58,114 @@ export default function Page() {
                 </div>
             </section>
 
-            {/* 2. Philosophy & Expertise Section */}
-            <section className="py-16 md:py-32 bg-white relative">
+            {/* 2. Philosophy & Expertise Section (Redesigned) */}
+            <section className="py-6 lg:py-10 xl:py-12 bg-white relative overflow-hidden">
+                {/* Decorative background numbers or letters */}
+                <div className="absolute top-1/4 -left-20 text-[20rem] font-black text-slate-50 opacity-[0.02] select-none pointer-events-none italic">
+                    GNOM
+                </div>
+
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-stretch">
-                        {/* Left Column: Mission/Vision */}
-                        <div className="flex flex-col justify-between space-y-16 h-full">
-                            <div className="space-y-16">
-                                <ScrollReveal>
-                                    <SectionHeader
-                                        title="Our Philosophy"
-                                        subtitle="Interlinking ideas, execution, and associated work for a seamless engineering experience."
-                                        align="left"
-                                    />
+                    <SectionHeader 
+                        title="Our Philosophy"
+                        subtitle="Interlinking ideas, execution, and associated work for a seamless engineering experience."
+                        prefix="Strategic Core"
+                        align="center"
+                        className="mb-12"
+                    />
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                        {/* Core Pillars (Mission/Vision) */}
+                        <div className="lg:col-span-7 flex flex-col">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                <ScrollReveal delay={0.1}>
+                                    <div className="group relative h-full">
+                                        <div className="absolute -inset-2 bg-slate-900 rounded-[3rem] rotate-1 group-hover:rotate-3 transition-transform duration-500" />
+                                        <div className="relative bg-white border-2 border-slate-900 rounded-[2.5rem] p-8 h-full shadow-2xl">
+                                            <div className="h-14 w-14 bg-slate-900 rounded-2xl flex items-center justify-center text-brand mb-6 shadow-xl">
+                                                <Target className="w-8 h-8" />
+                                            </div>
+                                            <h4 className="font-black text-2xl mb-4 text-slate-900 uppercase italic tracking-tighter">Mission</h4>
+                                            <p className="text-slate-600 leading-relaxed italic text-base">
+                                                "{companyProfile.mission}"
+                                            </p>
+                                        </div>
+                                    </div>
                                 </ScrollReveal>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                    <ScrollReveal delay={0.1}>
-                                        <GnomCard accentColor="bg-slate-900" rotate="rotate-2">
-                                            <div className="h-12 w-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand mb-6">
-                                                <Target className="w-6 h-6" />
+                                <ScrollReveal delay={0.2}>
+                                    <div className="group relative h-full">
+                                        <div className="absolute -inset-2 bg-brand rounded-[3rem] -rotate-1 group-hover:-rotate-3 transition-transform duration-500" />
+                                        <div className="relative bg-white border-2 border-slate-900 rounded-[2.5rem] p-8 h-full shadow-2xl">
+                                            <div className="h-14 w-14 bg-brand rounded-2xl flex items-center justify-center text-slate-900 mb-6 shadow-xl">
+                                                <Eye className="w-8 h-8" />
                                             </div>
-                                            <h4 className="font-black text-xl mb-3 text-slate-900 uppercase">Mission</h4>
-                                            <p className="text-slate-600 text-sm leading-relaxed italic">
-                                                "{companyProfile.mission.substring(0, 100)}..."
+                                            <h4 className="font-black text-2xl mb-4 text-slate-900 uppercase italic tracking-tighter text-right">Vision</h4>
+                                            <p className="text-slate-600 leading-relaxed italic text-base text-right">
+                                                "{companyProfile.vision}"
                                             </p>
-                                        </GnomCard>
-                                    </ScrollReveal>
-
-                                    <ScrollReveal delay={0.2}>
-                                        <GnomCard accentColor="bg-brand-light" rotate="-rotate-2">
-                                            <div className="h-12 w-12 bg-slate-100 rounded-xl flex items-center justify-center text-brand mb-6">
-                                                <Eye className="w-6 h-6" />
-                                            </div>
-                                            <h4 className="font-black text-xl mb-3 text-slate-900 uppercase">Vision</h4>
-                                            <p className="text-slate-600 text-sm leading-relaxed italic">
-                                                "{companyProfile.vision.substring(0, 100)}..."
-                                            </p>
-                                        </GnomCard>
-                                    </ScrollReveal>
-                                </div>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
                             </div>
 
-                            <ScrollReveal delay={0.3}>
-                                <GnomCard rotate="-rotate-1" padding="p-10">
-                                    <h3 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tight">Technical Commitment</h3>
-                                    <p className="text-slate-600 text-lg leading-relaxed mb-8 italic">
-                                        "{companyProfile.about}"
+                            <ScrollReveal delay={0.3} className="mt-auto h-full flex">
+                                <div className="bg-slate-900 rounded-[3rem] p-8 md:p-12 text-white relative overflow-hidden group w-full flex flex-col justify-center">
+                                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2" />
+                                    <h3 className="text-2xl md:text-3xl font-black mb-6 md:mb-8 uppercase italic tracking-tighter">Technical Commitment</h3>
+                                    <p className="text-slate-300 text-lg md:text-xl leading-relaxed italic mb-8 md:mb-10 opacity-90">
+                                        "GNOM is a creative platform of entrepreneurs: expertised, skilled, committed and experienced faculties, qualified and educated young engineers and technocrats. All of them share ideas in project implementation, execution, interlinking and associated work."
                                     </p>
-                                    <Link
-                                        href="/services"
-                                        className="flex items-center gap-3 text-brand font-black uppercase tracking-widest text-xs group"
-                                    >
-                                        Explore our expertise <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                                    </Link>
-                                </GnomCard>
+                                    <div className="mt-auto">
+                                        <Link
+                                            href="/services"
+                                            className="inline-flex items-center gap-4 text-brand font-black uppercase tracking-widest text-xs py-4 px-8 border-2 border-brand/30 rounded-full hover:bg-brand hover:text-slate-900 transition-all group"
+                                        >
+                                            Explore Expertise <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                        </Link>
+                                    </div>
+                                </div>
                             </ScrollReveal>
                         </div>
 
-                        {/* Right Column: Key Expertise Highlight */}
-                        <div className="h-full">
-                            <ScrollReveal direction="left" delay={0.4}>
-                                <GnomCard rotate="rotate-3" padding="p-12" accentColor="bg-brand" className="flex items-center">
-                                    <div className="flex flex-col items-center text-center py-6 w-full">
-                                        <div className="h-20 w-20 bg-slate-900 rounded-3xl flex items-center justify-center text-white mb-8 shadow-2xl">
-                                            <Users className="w-10 h-10" />
+                        {/* Expertise Cluster Visual */}
+                        <div className="lg:col-span-5 flex flex-col">
+                            <ScrollReveal direction="left" delay={0.4} className="h-full">
+                                <div className="relative p-12 rounded-[4rem] bg-brand border-4 border-slate-900 shadow-[20px_20px_0px_0px_#0f172a] h-full flex flex-col justify-center">
+                                    <div className="flex flex-col items-center text-center">
+                                        <div className="h-24 w-24 bg-slate-900 rounded-4xl flex items-center justify-center text-white mb-10 shadow-2xl rotate-3">
+                                            <Users className="w-12 h-12" />
                                         </div>
-                                        <h3 className="text-4xl font-black text-slate-900 mb-6 uppercase">The Expertise</h3>
-                                        <div className="space-y-6">
-                                            <p className="text-slate-700 leading-relaxed italic text-xl font-medium">
-                                                "All of our crews have 20 to 30 years experience in the field of Electrical, Plumbing, Mechanical and HVAC installation."
-                                            </p>
-                                            <div className="pt-8 border-t border-slate-100 grid grid-cols-2 gap-8">
-                                                <div>
-                                                    <p className="text-3xl font-black text-brand italic">8+</p>
-                                                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Core Services</p>
-                                                </div>
-                                                <div>
-                                                    <p className="text-3xl font-black text-brand italic">2012</p>
-                                                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Established</p>
-                                                </div>
+                                        <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase italic leading-none tracking-tighter">
+                                            The <br /> Expertise
+                                        </h3>
+                                        <p className="text-slate-800 leading-relaxed italic text-xl font-bold bg-white/30 p-6 rounded-3xl backdrop-blur-sm border border-white/20 mb-10">
+                                            "All of our crews have 20 to 30 years experience in the field of Electrical, Plumbing, Mechanical and HVAC installation."
+                                        </p>
+                                        
+                                        <div className="grid grid-cols-2 gap-8 w-full">
+                                            <div className="p-6 bg-slate-900 rounded-3xl text-white transform -rotate-2">
+                                                <p className="text-4xl font-black text-brand italic mb-1">8+</p>
+                                                <p className="text-[10px] font-black uppercase tracking-widest opacity-60">Services</p>
+                                            </div>
+                                            <div className="p-6 bg-white rounded-3xl text-slate-900 border-2 border-slate-900 transform rotate-2 shadow-xl">
+                                                <p className="text-4xl font-black text-brand italic mb-1">2012</p>
+                                                <p className="text-[10px] font-black uppercase tracking-widest opacity-60">Established</p>
                                             </div>
                                         </div>
                                     </div>
-                                </GnomCard>
+                                </div>
                             </ScrollReveal>
                         </div>
                     </div>
                 </div>
             </section>
 
+            {/* Business Flow Section */}
+            <BusinessFlow />
+
             {/* 3. Strategic Presence / Projects Section */}
-            <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white relative overflow-hidden">
+            <section className="py-6 lg:py-10 xl:py-12 bg-white relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
                     <ScrollReveal>
                         <SectionHeader

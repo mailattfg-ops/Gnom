@@ -3,6 +3,7 @@
 import { config } from "@/data/config";
 import { Mail, Phone, MapPin, Zap, MessageSquare } from "lucide-react";
 import { GnomCard } from "@/components/ui/GnomCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -67,7 +68,7 @@ export function ContactClient() {
                 </div>
             </section>
 
-            <section className="py-16 md:py-24 lg:py-32 xl:py-16">
+            <section className="py-6 lg:py-10 xl:py-12">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
                         {/* Contact Form */}
@@ -190,18 +191,15 @@ export function ContactClient() {
             </section>
 
             {/* 3. Operational Excellence Section */}
-            <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white border-t border-slate-100 relative overflow-hidden">
+            <section className="py-6 lg:py-10 xl:py-12 bg-white border-t border-slate-100 relative overflow-hidden">
                 <div className="container mx-auto px-6 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center mb-20">
-                        <h2 className="text-5xl font-black text-slate-900 mb-8 italic uppercase tracking-tighter">
-                            Operational <span className="text-brand">Excellence.</span>
-                        </h2>
-                        <p className="text-xl text-slate-600 italic font-medium">
-                            "Beyond design and installation, we provide a lifetime of engineering reliability and immediate technical response."
-                        </p>
-                    </div>
+                    <SectionHeader 
+                        title="Operational Excellence"
+                        subtitle="Quality assurance and management protocols that define our service delivery."
+                        align="center"
+                    />
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mt-8">
                         {[
                             { title: "24/7 Support", desc: "Round-the-clock emergency engineering consulting for critical infrastructure.", icon: MessageSquare },
                             { title: "Regional Hubs", desc: "Strategically located service centers across Kerala for rapid on-site deployment.", icon: MapPin },

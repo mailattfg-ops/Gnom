@@ -10,7 +10,7 @@ export function ServicePreview() {
     const previewServices = servicesData.slice(0, 3);
 
     return (
-        <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white">
+        <section className="py-6 lg:py-10 xl:py-12 bg-white">
             <div className="container mx-auto px-6 text-center">
                 <SectionHeader
                     title="MEP Services"
@@ -18,7 +18,7 @@ export function ServicePreview() {
                     align="center"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20 pt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-10 pt-5">
                     {previewServices.map((service, idx) => (
                         <GnomCard key={idx} rotate={idx % 2 === 0 ? "rotate-2" : "-rotate-2"}>
                             <div className="text-left">

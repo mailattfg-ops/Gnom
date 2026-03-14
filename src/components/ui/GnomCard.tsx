@@ -6,6 +6,7 @@ interface GnomCardProps {
     accentColor?: string;
     rotate?: string;
     padding?: string;
+    isRecommended?: boolean;
 }
 
 export function GnomCard({
@@ -13,7 +14,8 @@ export function GnomCard({
     className,
     accentColor = "bg-brand",
     rotate = "rotate-2",
-    padding = "p-8"
+    padding = "p-8",
+    isRecommended = false
 }: GnomCardProps) {
     return (
         <div className="relative group h-full">
@@ -30,6 +32,13 @@ export function GnomCard({
                 padding,
                 className
             )}>
+                {isRecommended && (
+                    <div className="absolute -top-4 -right-2 z-20">
+                        <div className="bg-slate-900 text-brand px-4 py-2 rounded-xl text-[10px] font-black italic uppercase tracking-[0.2em] shadow-2xl border-2 border-brand transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                            Most Recommended
+                        </div>
+                    </div>
+                )}
                 {children}
             </div>
         </div>

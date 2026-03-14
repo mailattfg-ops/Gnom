@@ -7,19 +7,21 @@ import { CheckCircle2 } from "lucide-react";
 
 export function Expertise() {
     return (
-        <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white relative overflow-hidden">
+        <section className="py-6 lg:py-10 xl:py-12 bg-white overflow-hidden">
             {/* Subtle Background Decoration */}
             <div className="absolute top-1/2 left-0 w-64 h-64 bg-brand/5 blur-[100px] rounded-full -translate-y-1/2" />
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
-                    <div className="space-y-12">
-                        <SectionHeader
-                            title="Our Expertise"
-                            subtitle="Precision MEP engineering for complex architectural landscapes."
-                            align="left"
-                        />
-                        <div className="grid gap-10">
+                <SectionHeader
+                    title="Our Expertise"
+                    subtitle="Precision MEP engineering for complex architectural landscapes."
+                    align="center"
+                    className="mb-10"
+                />
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                    <div className="space-y-6">
+                        <div className="grid gap-6">
                             {expertiseData.map((item, idx) => (
                                 <GnomCard key={idx} accentColor="bg-transparent" rotate={idx % 2 === 0 ? "rotate-1" : "-rotate-1"} padding="p-8">
                                     <div className="flex gap-6 items-start">

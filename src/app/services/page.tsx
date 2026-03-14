@@ -1,7 +1,7 @@
 import { servicesData } from "@/data/homeData";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { GnomCard } from "@/components/ui/GnomCard";
-import { ArrowRight, Binary, Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2 } from "lucide-react";
+import { ArrowRight, Binary, Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2, Palette, Filter, Recycle, Wrench } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 
-const icons = [Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2];
+const icons = [Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2, Palette, Filter, Recycle, Wrench];
 
 export default function ServicesPage() {
     return (
@@ -59,28 +59,46 @@ export default function ServicesPage() {
             </section>
 
             {/* 2. Services Grid */}
-            <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white">
+            <section className="py-6 lg:py-10 xl:py-12 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
                         {servicesData.map((service, idx) => {
-                            const Icon = icons[idx];
+                            const Icon = icons[idx] || Wrench;
                             return (
                                 <ScrollReveal key={service.id} delay={idx * 0.1}>
-                                    <GnomCard rotate={idx % 2 === 0 ? "rotate-2" : "-rotate-2"}>
-                                        <div className="flex flex-col h-full">
-                                            <div className="h-16 w-16 bg-slate-900 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-all duration-500 shadow-xl border border-white/10">
-                                                <Icon className="w-8 h-8" />
-                                            </div>
-                                            <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">{service.title}</h3>
-                                            <p className="text-slate-600 italic leading-relaxed mb-8 flex-1">
+                                    <GnomCard 
+                                        rotate={idx % 2 === 0 ? "rotate-1" : "-rotate-1"}
+                                        isRecommended={service.tag === "Recommended"}
+                                        padding="p-0"
+                                        className="overflow-hidden flex flex-col group"
+                                    >
+                                        {/* 1. Service Image Section */}
+                                        <div className="relative h-48 w-full overflow-hidden">
+                                            <Image 
+                                                src={service.image} 
+                                                alt={service.title}
+                                                fill
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                        </div>
+
+                                        {/* 2. Content Section */}
+                                        <div className="p-8 pt-10 flex flex-col flex-1">
+                                            <h3 className="text-xl font-black text-slate-900 mb-3 uppercase tracking-tight italic">
+                                                {service.title}
+                                            </h3>
+                                            <p className="text-slate-600 italic text-sm leading-relaxed mb-6 flex-1 opacity-80">
                                                 "{service.description}"
                                             </p>
+                                            
                                             <Link
                                                 href={`/contact?service=${encodeURIComponent(service.title)}#inquiry-form`}
-                                                className="pt-6 border-t border-slate-100 flex items-center justify-between group/btn text-brand font-black uppercase tracking-widest text-xs"
+                                                className="pt-5 border-t border-slate-100 flex items-center justify-between group/btn text-brand font-black uppercase tracking-widest text-[10px]"
                                             >
                                                 <span>Inquire Now</span>
-                                                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
+                                                <div className="h-6 w-6 rounded-full bg-brand/10 flex items-center justify-center group-hover/btn:bg-brand group-hover/btn:text-white transition-all">
+                                                    <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+                                                </div>
                                             </Link>
                                         </div>
                                     </GnomCard>
@@ -92,28 +110,20 @@ export default function ServicesPage() {
             </section>
 
             {/* 3. Engineering Methodology */}
-            <section className="py-16 md:py-24 lg:py-32 xl:py-16 bg-white relative overflow-hidden border-t border-slate-100">
+            <section className="py-6 lg:py-10 xl:py-12 bg-white relative overflow-hidden border-t border-slate-100">
                 {/* Decorative Grid */}
                 <div className="absolute inset-0 opacity-[0.03]"
                     style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
                 <div className="container mx-auto px-6 relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="lg:w-1/3 text-left">
-                            <ScrollReveal direction="right">
-                                <h2 className="text-5xl font-black mb-8 leading-[0.9] tracking-tighter italic uppercase text-slate-900">
-                                    Our<br />
-                                    <span className="text-brand">Methodology.</span>
-                                </h2>
-                            </ScrollReveal>
-                            <ScrollReveal delay={0.2}>
-                                <p className="text-xl text-slate-600 italic font-medium leading-relaxed">
-                                    "Meticulous planning meets advanced execution. Our 4-step lifecycle ensures every project delivers excellence."
-                                </p>
-                            </ScrollReveal>
-                        </div>
+                    <SectionHeader 
+                        title="Our Methodology"
+                        subtitle="Meticulous planning meets advanced execution. Our 4-step lifecycle ensures every project delivers excellence."
+                        align="center"
+                        className="mb-20"
+                    />
 
-                        <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 order-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
                                 { step: "01", title: "Analyze", desc: "In-depth feasibility and requirement mapping." },
                                 { step: "02", title: "Architect", desc: "Precision MEP design using BIM and AI integration." },
@@ -128,7 +138,6 @@ export default function ServicesPage() {
                                     </div>
                                 </ScrollReveal>
                             ))}
-                        </div>
                     </div>
                 </div>
             </section>
