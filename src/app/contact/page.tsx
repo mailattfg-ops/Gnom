@@ -1,5 +1,6 @@
 import { ContactClient } from "@/components/contact/ContactClient";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
     title: "Contact Us",
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <ContactClient />;
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-slate-900 flex items-center justify-center text-white italic font-black uppercase tracking-widest text-xl">Loading Intelligence...</div>}>
+            <ContactClient />
+        </Suspense>
+    );
 }

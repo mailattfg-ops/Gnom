@@ -23,10 +23,18 @@ export function ServicePreview() {
                         <GnomCard key={idx} rotate={idx % 2 === 0 ? "rotate-2" : "-rotate-2"}>
                             <div className="text-left">
                                 <h3 className="text-2xl font-black text-slate-900 mb-4">{service.title}</h3>
-                                <p className="text-slate-600 mb-8 line-clamp-2 italic leading-relaxed">"{service.description}"</p>
-                                <Link href="/services" className="text-brand font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">
-                                    Details <ArrowRight className="w-4 h-4" />
-                                </Link>
+                                <p className="text-slate-600 mb-6 line-clamp-2 italic leading-relaxed">"{service.description}"</p>
+                                <div className="flex items-center justify-between">
+                                    <Link href="/services" className="text-slate-400 font-black text-[10px] uppercase hover:text-slate-900 transition-all">
+                                        Details
+                                    </Link>
+                                    <Link 
+                                        href={`/contact?service=${encodeURIComponent(service.title)}#inquiry-form`}
+                                        className="text-brand font-black text-[10px] uppercase flex items-center gap-2 hover:gap-3 transition-all tracking-widest"
+                                    >
+                                        Inquire <ArrowRight className="w-3 h-3" />
+                                    </Link>
+                                </div>
                             </div>
                         </GnomCard>
                     ))}

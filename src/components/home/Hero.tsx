@@ -48,16 +48,16 @@ export function Hero() {
             </div>
 
             {/* Hero Image - Absolute positioned to touch top and bottom */}
-            <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
+            <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 overflow-hidden z-0 lg:z-0">
                 <Image
                     src="/images/home_hero.png"
                     alt="GNOM Engineering Excellence"
                     fill
-                    className="object-cover"
+                    className="object-cover opacity-40 lg:opacity-100"
                     priority
                 />
                 {/* Subtle gradient overlay to blend left side */}
-                <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-900/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-b from-slate-900 via-slate-900/40 to-slate-900 lg:bg-linear-to-r lg:from-slate-900 lg:via-slate-900/20 lg:to-transparent" />
             </div>
         </section>
     );

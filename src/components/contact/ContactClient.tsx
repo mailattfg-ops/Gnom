@@ -5,15 +5,31 @@ import { Mail, Phone, MapPin, Zap, MessageSquare } from "lucide-react";
 import { GnomCard } from "@/components/ui/GnomCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { servicesData } from "@/data/homeData";
 
 export function ContactClient() {
+    const searchParams = useSearchParams();
+    const serviceParam = searchParams.get("service");
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        service: "Industrial MEP Solutions",
+        service: "Plumbing Work", // Use first service as default
         message: ""
     });
+
+    useEffect(() => {
+        if (serviceParam) {
+            const decodedService = decodeURIComponent(serviceParam);
+            // Check if the service exists in our data to avoid invalid selection
+            const serviceExists = servicesData.some(s => s.title === decodedService);
+            if (serviceExists) {
+                setFormData(prev => ({ ...prev, service: decodedService }));
+            }
+        }
+    }, [serviceParam]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -72,9 +88,11 @@ export function ContactClient() {
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
                         {/* Contact Form */}
-                        <div id="inquiry-form" className="bg-white p-10 md:p-12 rounded-[3.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-slate-100 relative overflow-hidden group">
+                        <div id="inquiry-form" className="bg-white p-10 md:p-12 rounded-[3.5rem] border-2 border-slate-900 relative overflow-hidden group">
+                            {/* Inner Accent Border */}
+                            <div className="absolute inset-2 border border-brand/10 rounded-[2.8rem] pointer-events-none" />
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
-                            <h2 className="text-4xl font-black mb-10 text-slate-900 italic uppercase tracking-tight">Project <span className="text-brand">Inquiry.</span></h2>
+                            <h2 className="text-4xl font-black mb-10 text-slate-900 italic uppercase tracking-tight relative z-10">Project <span className="text-brand">Inquiry.</span></h2>
                             <form onSubmit={handleSubmit} className="space-y-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div className="space-y-3">
@@ -108,11 +126,12 @@ export function ContactClient() {
                                             onChange={(e) => handleFieldChange("service", e.target.value)}
                                             className="w-full px-8 py-5 bg-slate-50 border border-slate-200 rounded-2xl focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/5 transition-all outline-none appearance-none font-bold text-slate-900"
                                         >
-                                            <option>Industrial MEP Solutions</option>
-                                            <option>Commercial HVAC Systems</option>
-                                            <option>Electrical Infrastructure</option>
-                                            <option>Smart Automation</option>
-                                            <option>Technical Audit</option>
+                                            {servicesData.map((service) => (
+                                                <option key={service.id} value={service.title}>
+                                                    {service.title}
+                                                </option>
+                                            ))}
+                                            <option value="Other">Other Specific Requirement</option>
                                         </select>
                                         <div className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                                             <Zap className="w-5 h-5" />

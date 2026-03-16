@@ -14,6 +14,8 @@ const navLinks = [
     { name: "Contact", href: "/contact" },
 ];
 
+const whatsappUrl = `https://wa.me/${config.whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Hello GNOM! I'm interested in your MEP engineering services.")}`;
+
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -75,7 +77,7 @@ export function Navbar() {
                     ))}
 
                     <Link
-                        href="/contact"
+                        href={whatsappUrl}
                         className="group relative px-8 py-3 bg-white text-slate-900 rounded-xl font-black text-xs tracking-[0.2em] overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl uppercase italic"
                     >
                         <span className="relative z-10">Inquiry</span>
