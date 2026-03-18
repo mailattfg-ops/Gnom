@@ -67,6 +67,7 @@ export default function ServicesPage() {
                             return (
                                 <ScrollReveal key={service.id} delay={idx * 0.1}>
                                     <GnomCard 
+                                        id={service.title.toLowerCase().replace(/\s+/g, '-')}
                                         rotate={idx % 2 === 0 ? "rotate-1" : "-rotate-1"}
                                         isRecommended={service.tag === "Recommended"}
                                         padding="p-0"

@@ -10,7 +10,9 @@ export function JsonLd() {
         "telephone": config.whatsappNumber,
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Kodakara", // Based on image clients
+            "streetAddress": `${config.address.line2}, ${config.address.line3}, ${config.address.line4}`,
+            "addressLocality": config.address.line3,
+            "postalCode": config.address.pin,
             "addressRegion": "Kerala",
             "addressCountry": "IN"
         },

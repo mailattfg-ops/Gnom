@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 interface GnomCardProps {
     children: React.ReactNode;
     className?: string;
+    id?: string;
     accentColor?: string;
     rotate?: string;
     padding?: string;
@@ -12,13 +13,14 @@ interface GnomCardProps {
 export function GnomCard({
     children,
     className,
+    id,
     accentColor = "bg-brand",
     rotate = "rotate-2",
     padding = "p-8",
     isRecommended = false
 }: GnomCardProps) {
     return (
-        <div className="relative group h-full">
+        <div id={id} className="relative group h-full">
             {/* Background Accent Layer */}
             <div className={cn(
                 "absolute inset-0 rounded-[2.5rem] transition-transform duration-500",

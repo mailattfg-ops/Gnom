@@ -13,13 +13,16 @@ export function Footer() {
                     <div className="space-y-6">
                         <h4 className="font-bold text-white uppercase tracking-wider text-xs">Quick Links</h4>
                         <ul className="space-y-4">
-                            {["Home", "About Us", "Services", "Contact"].map((link) => (
-                                <li key={link}>
-                                    <a href={`/${link.toLowerCase().replace(" ", "")}`} className="hover:text-brand transition-colors text-sm font-medium">
-                                        {link}
-                                    </a>
-                                </li>
-                            ))}
+                            {["Home", "About Us", "Services", "Contact"].map((link) => {
+                                const firstword = link.split(" ")[0];
+                                return (
+                                    <li key={link}>
+                                        <a href={`/${firstword.toLowerCase()}`} className="hover:text-brand transition-colors text-sm font-medium">
+                                            {link}
+                                        </a>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
 
@@ -27,11 +30,21 @@ export function Footer() {
                     <div className="space-y-6">
                         <h4 className="font-bold text-white uppercase tracking-wider text-xs">Our Services</h4>
                         <ul className="space-y-4 text-sm font-medium">
-                            <li className="hover:text-brand cursor-pointer transition-colors">PLUMBING WORK</li>
-                            <li className="hover:text-brand cursor-pointer transition-colors">ELECTRICAL WORK</li>
-                            <li className="hover:text-brand cursor-pointer transition-colors">HVAC</li>
-                            <li className="hover:text-brand cursor-pointer transition-colors">SOLAR</li>
-                            <li className="hover:text-brand cursor-pointer transition-colors">CCTV & SECURITY</li>
+                            <li className="hover:text-brand cursor-pointer transition-colors">
+                                <a href="/services#plumbing-work">PLUMBING WORK</a>
+                            </li>
+                            <li className="hover:text-brand cursor-pointer transition-colors">
+                                <a href="/services#electrical-work">ELECTRICAL WORK</a>
+                            </li>
+                            <li className="hover:text-brand cursor-pointer transition-colors">
+                                <a href="/services#hvac">HVAC</a>
+                            </li>
+                            <li className="hover:text-brand cursor-pointer transition-colors">
+                                <a href="/services#solar-&-power-solutions">SOLAR</a>
+                            </li>
+                            <li className="hover:text-brand cursor-pointer transition-colors">
+                                <a href="/services#cctv-security">CCTV & SECURITY</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -41,7 +54,11 @@ export function Footer() {
                         <ul className="space-y-5 text-sm">
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                                <span className="font-medium">Kodakara, Thrissur,<br />Kerala, India</span>
+                                <span className="font-medium">
+                                    {config.address.line1}, {config.address.line2},<br />
+                                    {config.address.line3}, {config.address.line4},<br />
+                                    PIN {config.address.pin}
+                                </span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="w-5 h-5 text-brand shrink-0" />
@@ -61,9 +78,9 @@ export function Footer() {
                     {/* 4. Google Map */}
                     <div className="col-span-2 md:col-span-1 space-y-6">
                         <h4 className="font-bold text-white uppercase tracking-wider text-xs">Our Location</h4>
-                        <div className="w-full h-48 rounded-2xl overflow-hidden grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all border border-slate-700 shadow-2xl">
+                        <div className="w-full h-48 rounded-2xl overflow-hidden transition-all border border-slate-700 shadow-2xl">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15704.14811025!2d76.3267735!3d10.3542915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f967f897df03%3A0xc4931a23861fb6a5!2sKodakara%2C%20Kerala!5e0!3m2!1sen!2sin!4v1710582000000!5m2!1sen!2sin" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31413.598185581308!2d76.16241395473483!3d10.205018029375294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081b13432bc127%3A0xac513e9f17de56fa!2sTIME%20INTERIORS%20-Interior%20Designer%2C%20Modular%20Kitchen%2C%20Building%20Contractors%2C%20Aluminium%20Fabrication%2CDoor%20Dealers%2C%20Home%20Builders!5e0!3m2!1sen!2sin!4v1773807604348!5m2!1sen!2sin" 
                                 width="100%" 
                                 height="100%" 
                                 style={{ border: 0 }} 
@@ -71,6 +88,7 @@ export function Footer() {
                                 loading="lazy" 
                                 referrerPolicy="no-referrer-when-downgrade"
                             ></iframe>
+                            
                         </div>
                     </div>
                 </div>

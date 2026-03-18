@@ -199,7 +199,7 @@ export function ContactClient() {
                                         <MapPin className="w-12 h-12 text-brand shrink-0" />
                                         <div>
                                             <h4 className="font-black text-slate-900 mb-2 uppercase tracking-tight">Corporate Office</h4>
-                                            <p className="text-slate-500 italic font-medium leading-relaxed">Kodakara, Thrissur Dist., Kerala, India - Premium MEP Solutions Regional Center.</p>
+                                            <p className="text-slate-500 italic font-medium leading-relaxed">{config.fullAddress}</p>
                                         </div>
                                     </div>
                                 </GnomCard>
