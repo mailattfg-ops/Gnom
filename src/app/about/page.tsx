@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 
 import { BusinessFlow } from "@/components/about/BusinessFlow";
+import { OrganizationalStructure } from "@/components/about/OrganizationalStructure";
 
 export default function Page() {
     return (
@@ -160,6 +161,9 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+
+            {/* Organizational Structure Section */}
+            <OrganizationalStructure />
 
             {/* Business Flow Section */}
             <BusinessFlow />
