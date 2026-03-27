@@ -38,7 +38,7 @@ export default function Page() {
                         </ScrollReveal>
                         <ScrollReveal delay={0.2}>
                             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-medium italic opacity-90">
-                                "A creative platform of expert engineers delivering cutting-edge MEP solutions with meticulous precision."
+                                "A creative platform of expert engineers delivering multiple service management solutions with meticulous precision."
                             </p>
                         </ScrollReveal>
                     </div>
@@ -47,7 +47,7 @@ export default function Page() {
                 {/* Hero Image - Absolute positioned to touch top and bottom */}
                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
                     <Image
-                        src="/images/about_hero.png"
+                        src="/images/about_hero.webp"
                         alt="About GNOM"
                         fill
                         className="object-cover"

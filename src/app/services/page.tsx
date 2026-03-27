@@ -47,7 +47,7 @@ export default function ServicesPage() {
                 {/* Hero Image - Absolute positioned to touch top and bottom */}
                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
                     <Image
-                        src="/images/services_hero.png"
+                        src="/images/services_hero.webp"
                         alt="Our MEP Services"
                         fill
                         className="object-cover"

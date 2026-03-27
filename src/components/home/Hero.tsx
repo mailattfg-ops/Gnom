@@ -50,7 +50,7 @@ export function Hero() {
             {/* Hero Image - Absolute positioned to touch top and bottom */}
             <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 overflow-hidden z-0 lg:z-0">
                 <Image
-                    src="/images/home_hero.png"
+                    src="/images/home_hero.webp"
                     alt="GNOM Engineering Excellence"
                     fill
                     className="object-cover opacity-40 lg:opacity-100"

@@ -73,7 +73,7 @@ export function ContactClient() {
                 {/* Hero Image - Absolute positioned to touch top and bottom */}
                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block overflow-hidden">
                     <Image
-                        src="/images/contact_hero.png"
+                        src="/images/contact_hero.webp"
                         alt="Contact GNOM Engineering"
                         fill
                         className="object-cover"

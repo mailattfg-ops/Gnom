@@ -28,7 +28,7 @@ export function PlatformShowcase() {
                                 {/* Large background blurred image for depth */}
                                 <div className="absolute inset-0 scale-125 opacity-10 blur-[120px] overflow-hidden rounded-[4rem]">
                                     <Image 
-                                        src="/images/platform_excellence.png"
+                                        src="/images/showcase_platform.webp"
                                         alt="Background blur"
                                         fill
                                         className="object-cover"
@@ -38,10 +38,10 @@ export function PlatformShowcase() {
                                 {/* Glassy Grid Cluster */}
                                 <div className="relative grid grid-cols-2 gap-4 lg:gap-6 p-4">
                                     {[
-                                        { label: "Platform", image: "/images/showcase_platform.png", rotate: "-rotate-2" },
-                                        { label: "Digital", image: "/images/showcase_digital.png", rotate: "rotate-1" },
-                                        { label: "Cluster", image: "/images/showcase_cluster.png", rotate: "rotate-2" },
-                                        { label: "Precision", image: "/images/showcase_precision.png", rotate: "-rotate-1" }
+                                        { label: "Platform", image: "/images/showcase_platform.webp", rotate: "-rotate-2" },
+                                        { label: "Digital", image: "/images/showcase_digital.webp", rotate: "rotate-1" },
+                                        { label: "Cluster", image: "/images/showcase_cluster.webp", rotate: "rotate-2" },
+                                        { label: "Precision", image: "/images/showcase_precision.webp", rotate: "-rotate-1" }
                                     ].map((box, i) => (
                                         <div 
                                             key={i}

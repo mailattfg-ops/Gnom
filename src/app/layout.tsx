@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         description: "Leading MEP engineering experts delivering cutting-edge architectural solutions.",
         images: [
             {
-                url: "/images/og-image.jpg",
+                url: "/images/home_hero.webp",
                 width: 1200,
                 height: 630,
                 alt: config.companyName,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: config.companyName,
         description: "Intelligence in MEP design and execution.",
-        images: ["/images/og-image.jpg"],
+        images: ["/images/home_hero.webp"],
     },
     robots: {
         index: true,
