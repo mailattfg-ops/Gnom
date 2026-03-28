@@ -11,18 +11,27 @@ import {
     Flame,
     Lock,
     Cpu,
-    ArrowRight
+    ArrowRight,
+    Wrench,
+    Video,
+    FlameKindling,
+    Filter,
+    Recycle
 } from "lucide-react";
 
 const serviceIcons: Record<number, any> = {
-    1: Droplets,
-    2: Zap,
-    3: Wind,
-    4: Sun,
-    5: Shield,
-    6: Flame,
-    7: Lock,
-    8: Cpu,
+    1: Droplets,      // Interior & Architecture
+    2: Wrench,        // MEP Services
+    3: Zap,           // Electrical Work
+    4: Wind,          // HVAC
+    5: Sun,           // Solar & Power
+    6: Video,         // CCTV Security
+    7: Flame,         // Plumbing Work
+    8: Lock,          // Access Control
+    9: Cpu,           // Home & Office Automation
+    10: FlameKindling, // Fire & Burglary
+    11: Filter,        // Water Purification
+    12: Recycle,       // Waste Water Management
 };
 
 export function Services() {
@@ -38,7 +47,7 @@ export function Services() {
                     align="center"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                     {servicesData.map((service) => {
                         const Icon = serviceIcons[service.id];
                         return (

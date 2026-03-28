@@ -86,7 +86,7 @@ export function ContactClient() {
 
             <section className="py-6 lg:py-10 xl:py-12">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                         {/* Contact Form */}
                         <div id="inquiry-form" className="bg-white p-10 md:p-12 rounded-[3.5rem] border-2 border-slate-900 relative overflow-hidden group">
                             {/* Inner Accent Border */}
@@ -94,7 +94,7 @@ export function ContactClient() {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
                             <h2 className="text-4xl font-black mb-10 text-slate-900 italic uppercase tracking-tight relative z-10">Project <span className="text-brand">Inquiry.</span></h2>
                             <form onSubmit={handleSubmit} className="space-y-8">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                                     <div className="space-y-3">
                                         <label className="text-xs font-black text-slate-500 uppercase tracking-[0.2em] ml-1">Full Name</label>
                                         <input
@@ -149,7 +149,7 @@ export function ContactClient() {
                                         placeholder="Briefly describe your MEP requirements..."
                                     />
                                 </div>
-                                <button type="submit" className="w-full py-6 bg-slate-900 text-white font-black text-lg rounded-2xl shadow-xl hover:cursor-pointer active:scale-95 transition-all flex items-center justify-center gap-3 group/btn">
+                                <button type="submit" className="w-full py-4 lg:py-6 bg-slate-900 text-white font-black text-base lg:text-lg rounded-2xl shadow-xl hover:cursor-pointer active:scale-95 transition-all flex items-center justify-center gap-3 group/btn">
                                     Submit
                                     <Zap className="w-5 h-5 text-brand group-hover/btn:animate-pulse" />
                                 </button>
@@ -158,24 +158,29 @@ export function ContactClient() {
 
                         {/* Contact Details */}
                         <div className="flex flex-col justify-center space-y-12">
-                            <div className="space-y-8">
-                                <h2 className="text-4xl md:text-5xl font-black text-slate-900 italic leading-[1.1] tracking-tighter uppercase">
-                                    "Precision in detail.<br />
-                                    <span className="text-brand">Intelligence in design.</span><br />
-                                    Excellence in execution."
+                            <div className="space-y-4 md:space-y-8">
+                                <div className="flex items-center gap-2 md:hidden">
+                                    <div className="h-0.5 w-6 bg-brand" />
+                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand">Core Identity</span>
+                                </div>
+                                <h2 className="text-2xl md:text-5xl font-black text-slate-900 italic leading-[1.1] tracking-tighter uppercase relative">
+                                    "Precision in detail.<br className="hidden md:block" />
+                                    <span className="text-brand">Intelligence in design.</span><br className="hidden md:block" />
+                                    <span className="md:hidden"> </span>Excellence in execution."
                                 </h2>
-                                <p className="text-slate-500 font-bold uppercase tracking-widest text-sm">— GNOM Engineering Philosophy</p>
+                                <p className="text-slate-500 font-bold uppercase tracking-widest text-[9px] md:text-sm">— GNOM Engineering Philosophy</p>
                             </div>
 
-                            <div className="flex flex-col gap-6">
-                                <a href={`tel:${config.whatsappNumber.replace(/\s/g, "")}`} className="block transition-transform hover:scale-[1.01] active:scale-[0.99]">
+                            <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+                                <a href={`tel:${config.primaryNumber.replace(/\s/g, "")}`} className="block transition-transform hover:scale-[1.01] active:scale-[0.99]">
                                     <GnomCard rotate="rotate-0" padding="p-10" accentColor="bg-slate-50">
                                         <div className="flex items-start gap-8">
                                             <Phone className="w-12 h-12 text-brand shrink-0" />
                                             <div>
                                                 <h4 className="font-black text-slate-900 mb-2 uppercase tracking-tight">Call Experts</h4>
-                                                <p className="text-slate-500 italic font-medium">{config.whatsappNumber}</p>
-                                                <p className="text-[10px] text-brand font-black uppercase tracking-widest mt-2">Available 24/7 for support</p>
+                                                <p className="text-slate-900 font-black italic text-lg">{config.primaryNumber}</p>
+                                                <p className="text-slate-400 italic font-medium text-sm">{config.secondaryNumber}</p>
+                                                <p className="text-[10px] text-brand font-black uppercase tracking-widest mt-4">Available 24/7 for support</p>
                                             </div>
                                         </div>
                                     </GnomCard>
@@ -218,7 +223,7 @@ export function ContactClient() {
                         align="center"
                     />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 mt-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                         {[
                             { title: "24/7 Support", desc: "Round-the-clock emergency engineering consulting for critical infrastructure.", icon: MessageSquare },
                             { title: "Regional Hubs", desc: "Strategically located service centers across Kerala for rapid on-site deployment.", icon: MapPin },

@@ -19,7 +19,7 @@ export function Expertise() {
                     className="mb-10"
                 />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-stretch mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                     <div className="space-y-6">
                         <div className="grid gap-6">
                             {expertiseData.map((item, idx) => (

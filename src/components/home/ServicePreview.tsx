@@ -18,7 +18,7 @@ export function ServicePreview() {
                     align="center"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-10 pt-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-10 mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                     {previewServices.map((service, idx) => (
                         <GnomCard key={idx} rotate={idx % 2 === 0 ? "rotate-2" : "-rotate-2"}>
                             <div className="text-left">
@@ -42,9 +42,9 @@ export function ServicePreview() {
 
                 <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all"
+                    className="inline-flex items-center gap-2 px-8 py-4 sm:px-10 sm:py-5 bg-slate-900 text-white font-black text-sm sm:text-base rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all"
                 >
-                    View All Services <ArrowRight className="w-5 h-5" />
+                    View All Services <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
             </div>
         </section>

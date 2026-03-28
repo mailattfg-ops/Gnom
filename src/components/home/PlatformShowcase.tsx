@@ -22,7 +22,7 @@ export function PlatformShowcase() {
                         className="mb-8 md:mb-12"
                     />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                         <ScrollReveal direction="right">
                             <div className="relative">
                                 {/* Large background blurred image for depth */}
@@ -63,7 +63,7 @@ export function PlatformShowcase() {
                                             
                                             {/* Primary Image Content */}
                                             <div className="relative h-full w-full p-6 flex flex-col items-center justify-center">
-                                                <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-inner">
+                                                <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
                                                     <Image 
                                                         src={box.image}
                                                         alt={box.label}

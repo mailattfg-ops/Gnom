@@ -78,7 +78,7 @@ export function OrganizationalStructure() {
                     className="mb-4 sm:mb-6 lg:mb-24"
                 />
 
-                <div className="relative max-w-5xl mx-auto h-[420px] md:h-[750px] flex items-center justify-center">
+                <div className="relative max-w-5xl mx-auto h-[420px] md:h-[750px] flex items-center justify-center mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                     
                     {/* 1. MOTHER COMPANY (CENTER) */}
                     <div className="relative z-30 group">
@@ -102,7 +102,7 @@ export function OrganizationalStructure() {
                                         className="absolute top-1/2 left-1/2 h-0.5 bg-brand/30 origin-left"
                                         style={{
                                             width: "calc(var(--p-r) - var(--gnom-r) - var(--p-node-r))", 
-                                            transform: `rotate(${pAngle}rad) translateX(var(--gnom-r))`
+                                            transform: `rotate(${pAngle.toFixed(10)}rad) translateX(var(--gnom-r))`
                                         }}
                                     >
                                         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-brand rounded-full" />
@@ -112,7 +112,7 @@ export function OrganizationalStructure() {
                                     <div 
                                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
                                         style={{
-                                            transform: `translate(calc(var(--p-r) * ${Math.cos(pAngle)}), calc(var(--p-r) * ${Math.sin(pAngle)}))`
+                                            transform: `translate(calc(var(--p-r) * ${Math.cos(pAngle).toFixed(10)}), calc(var(--p-r) * ${Math.sin(pAngle).toFixed(10)}))`
                                         }}
                                     >
                                         <ScrollReveal delay={0.1 * pIdx}>
@@ -136,7 +136,7 @@ export function OrganizationalStructure() {
                                                     className="absolute top-1/2 left-1/2 h-0.5 bg-brand/20 origin-left transition-all duration-500 group-hover:bg-brand/50"
                                                     style={{
                                                         width: "calc(var(--c-r) - var(--p-r) - var(--p-node-r) - var(--c-node-r))",
-                                                        transform: `rotate(${cAngle}rad) translateX(calc(var(--p-r) + var(--p-node-r)))`
+                                                        transform: `rotate(${cAngle.toFixed(10)}rad) translateX(calc(var(--p-r) + var(--p-node-r)))`
                                                     }}
                                                 />
 
@@ -144,7 +144,7 @@ export function OrganizationalStructure() {
                                                 <div 
                                                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
                                                     style={{
-                                                        transform: `translate(calc(var(--c-r) * ${Math.cos(cAngle)}), calc(var(--c-r) * ${Math.sin(cAngle)}))`
+                                                        transform: `translate(calc(var(--c-r) * ${Math.cos(cAngle).toFixed(10)}), calc(var(--c-r) * ${Math.sin(cAngle).toFixed(10)}))`
                                                     }}
                                                 >
                                                     <ScrollReveal delay={0.15 * (pIdx + cIdx)}>

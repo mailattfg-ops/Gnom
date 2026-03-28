@@ -32,7 +32,7 @@ export const companyProfile = {
 };
 
 export const servicesData = [
-    { 
+  { 
     id: 1, 
     title: "Interior & Architecture", 
     image: "/images/Interior & Architecture.webp",
@@ -40,72 +40,70 @@ export const servicesData = [
   },
   { 
     id: 2, 
+    title: "MEP Services", 
+    image: "/images/Maintenance-Army.webp",
+    description: "We provide comprehensive Mechanical, Electrical, and Plumbing (MEP) solutions tailored to residential, commercial, and industrial projects. Our focus is on delivering efficient, safe, and cost-effective systems that ensure long-term performance and reliability.",
+    tag: "Recommended"
+  },
+  { 
+    id: 3, 
     title: "Electrical Work", 
     image: "/images/Electricians.webp",
     description: "Comprehensive electrical solutions for industrial, commercial, and residential projects with top-tier safety standards." 
   },
   { 
-    id: 3, 
+    id: 4, 
     title: "HVAC", 
     image: "/images/HVAC.webp",
     description: "Heating, Ventilation, and Air Conditioning systems designed for optimal climate control and energy efficiency." 
   },
   { 
-    id: 4, 
+    id: 5, 
     title: "Solar & Power Solutions", 
     image: "/images/Solar & Power Solutions.webp",
     description: "Sustainable energy with high-efficiency on-grid/off-grid solar power, plus advanced UPS and inverter systems for backup." 
   },
   { 
-    id: 5, 
+    id: 6, 
     title: "CCTV Security", 
     image: "/images/CCTV Security.webp",
     description: "Advanced surveillance and security systems ensuring 24/7 protection for your home and business." 
   },
-{ 
-    id: 6, 
+  { 
+    id: 7, 
     title: "Plumbing Work", 
     image: "/images/plumbing.webp",
     description: "Expertised in high-end plumbing systems, from design to execution including sanitary and drainage solutions." 
   },
-
   { 
-    id: 7, 
+    id: 8, 
     title: "Access Control", 
     image: "/images/Access Control.webp",
     description: "Secure and modern access management solutions for warehouses, hospitals, schools, and malls." 
   },
   { 
-    id: 8, 
+    id: 9, 
     title: "Home & Office Automation", 
     image: "/images/Home & Office Automation.webp",
     description: "Smart automation for theaters, classrooms, and offices." 
   },
   { 
-    id: 9, 
+    id: 10, 
     title: "Fire & Burglary", 
     image: "/images/Fire & Burglary.webp",
     description: "State-of-the-art fire fighting and burglar alarm systems including remote-controlled irrigation integration." 
   },
-    
   { 
-    id: 10, 
+    id: 11, 
     title: "Water Purification", 
     image: "/images/Water Purification.webp",
     description: "Advanced water treatment and purification systems ensuring clean and safe water for all needs." 
   },
   { 
-    id: 11, 
+    id: 12, 
     title: "Waste Water Management", 
     image: "/images/Waste Water Management.webp",
     description: "Sustainable waste water treatment and recycling solutions for residential and commercial environments." 
-  },
-  { 
-    id: 12, 
-    title: "Maintenance-Army", 
-    image: "/images/Maintenance-Army.webp",
-    description: "All maintenance, M.E.P, Home appliances, building maintenance. Linked all service team. Ready to Service fast and prompt timing with responsible commitment.",
-    tag: "Recommended"
   }
 ];
 

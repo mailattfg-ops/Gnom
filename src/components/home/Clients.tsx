@@ -17,7 +17,7 @@ export function Clients() {
                     align="center"
                 />
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mt-10">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                     {prestigiousClients.map((client, idx) => (
                         <div key={idx} className="group relative">
                             <GnomCard

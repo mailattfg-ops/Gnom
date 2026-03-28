@@ -75,10 +75,10 @@ export default function Page() {
                         className="mb-12"
                     />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8">
                         {/* Core Pillars (Mission/Vision) */}
                         <div className="lg:col-span-7 flex flex-col">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
                                 <ScrollReveal delay={0.1}>
                                     <div className="group relative h-full">
                                         <div className="absolute -inset-2 bg-slate-900 rounded-[3rem] rotate-1 group-hover:rotate-3 transition-transform duration-500" />
@@ -120,9 +120,9 @@ export default function Page() {
                                     <div className="mt-auto">
                                         <Link
                                             href="/services"
-                                            className="inline-flex items-center gap-4 text-brand font-black uppercase tracking-widest text-xs py-4 px-8 border-2 border-brand/30 rounded-full hover:bg-brand hover:text-slate-900 transition-all group"
+                                            className="inline-flex items-center gap-4 text-brand font-black uppercase tracking-widest text-[10px] sm:text-xs py-3.5 px-6 sm:py-4 sm:px-8 border-2 border-brand/30 rounded-full hover:bg-brand hover:text-slate-900 transition-all group"
                                         >
-                                            Explore Expertise <ChevronRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                            Explore Expertise <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-2 transition-transform" />
                                         </Link>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ export default function Page() {
                                             "All of our crews have 20 to 30 years experience in the field of Electrical, Plumbing, Mechanical and HVAC installation."
                                         </p>
                                         
-                                        <div className="grid grid-cols-2 gap-8 w-full">
+                                        <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 w-full">
                                             <div className="p-6 bg-slate-900 rounded-3xl text-white transform -rotate-2">
                                                 <p className="text-4xl font-black text-brand italic mb-1">8+</p>
                                                 <p className="text-[10px] font-black uppercase tracking-widest opacity-60">Services</p>
@@ -179,7 +179,7 @@ export default function Page() {
                         />
                     </ScrollReveal>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8 lg:mt-10 xl:mt-12">
                         {currentProjects.slice(0, 3).map((project, idx) => (
                             <ScrollReveal key={idx} delay={idx * 0.1}>
                                 <GnomCard rotate={idx % 2 === 0 ? "rotate-2" : "-rotate-2"}>
@@ -215,9 +215,9 @@ export default function Page() {
                     <ScrollReveal delay={0.2}>
                         <Link
                             href="/contact#inquiry-form"
-                            className="inline-flex items-center gap-4 px-12 py-6 bg-brand text-white font-black text-xl rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all italic uppercase"
+                            className="inline-flex items-center gap-4 px-6 py-3.5 sm:px-8 sm:py-4 lg:px-12 lg:py-6 bg-brand text-white font-black text-sm sm:text-base lg:text-xl rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all italic uppercase"
                         >
-                            Contact Experts Now <ArrowRight className="w-6 h-6" />
+                            Contact Experts Now <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
                         </Link>
                     </ScrollReveal>
                 </div>

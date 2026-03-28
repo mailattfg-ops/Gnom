@@ -1,7 +1,7 @@
 import { servicesData } from "@/data/homeData";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { GnomCard } from "@/components/ui/GnomCard";
-import { ArrowRight, Binary, Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2, Palette, Filter, Recycle, Wrench } from "lucide-react";
+import { ArrowRight, Droplets, Zap, Wind, Sun, Video, Flame, Lock, Cpu, FlameKindling, Filter, Recycle, Wrench } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 
-const icons = [Droplets, Zap, Wind, Sun, Video, FlameKindling, Lock, Gamepad2, Palette, Filter, Recycle, Wrench];
+const icons = [Droplets, Wrench, Zap, Wind, Sun, Video, Flame, Lock, Cpu, FlameKindling, Filter, Recycle];
 
 export default function ServicesPage() {
     return (
@@ -61,7 +61,7 @@ export default function ServicesPage() {
             {/* 2. Services Grid */}
             <section className="py-6 lg:py-10 xl:py-12 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                         {servicesData.map((service, idx) => {
                             const Icon = icons[idx] || Wrench;
                             return (
@@ -157,9 +157,9 @@ export default function ServicesPage() {
                     <ScrollReveal delay={0.2}>
                         <Link
                             href="/contact#inquiry-form"
-                            className="inline-flex items-center gap-4 px-12 py-6 bg-brand text-white font-black text-xl rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all italic uppercase"
+                            className="inline-flex items-center gap-2 sm:gap-4 px-8 py-4 sm:px-12 sm:py-6 bg-brand text-white font-black text-lg sm:text-xl rounded-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all italic uppercase"
                         >
-                            Launch Your Mission <ArrowRight className="w-6 h-6" />
+                            Launch Your Mission <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                         </Link>
                     </ScrollReveal>
                 </div>

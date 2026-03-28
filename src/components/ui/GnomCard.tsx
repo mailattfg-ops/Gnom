@@ -30,7 +30,7 @@ export function GnomCard({
 
             {/* Main Content Layer */}
             <div className={cn(
-                "relative h-full bg-white border-2 border-slate-900 rounded-[2.5rem] shadow-xl transition-all duration-300",
+                "relative h-full bg-white border-2 border-slate-900 rounded-[2.5rem] transition-all duration-300",
                 padding,
                 className
             )}>

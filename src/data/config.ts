@@ -1,6 +1,9 @@
 export const config = {
   companyName: "GNOM",
-  whatsappNumber: "+91 98477 59366",
+  whatsappNumber: "+91 98475 07095",
+  whatsappMessage: "Hello GNOM! I have an inquiry about your services.",
+  primaryNumber: "+91 98475 07095",
+  secondaryNumber: "+91 98477 59366",
   email: "info@gnom.com",
   address: {
     line1: "G-NOM Systems",
