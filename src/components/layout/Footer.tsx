@@ -104,7 +104,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-6 md:pt-8 lg:pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <div className="pt-6 md:pt-8 lg:pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
                     <p>© {currentYear} {config.companyName}. All rights reserved.</p>
                     <p className="flex items-center gap-1.5 uppercase tracking-widest text-[10px] font-black">
                         Powered by <a href="https://thinkforgeglobal.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand transition-colors italic">Think Forge Global</a>

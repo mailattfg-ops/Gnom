@@ -1,8 +1,10 @@
 "use client";
 
+import { config } from "@/data/config";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ShieldCheck, Users, HardHat } from "lucide-react";
+import { Users, HardHat } from "lucide-react";
 
 export function OrganizationalStructure() {
     // Structured data: A (GNOM) -> B (Providers) -> C (Customers)
@@ -83,10 +85,15 @@ export function OrganizationalStructure() {
                     {/* 1. MOTHER COMPANY (CENTER) */}
                     <div className="relative z-30 group">
                         <div className="absolute -inset-8 bg-brand/20 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000" />
-                        <div className="relative w-32 h-32 md:w-48 md:h-48 bg-slate-900 rounded-full border-4 border-brand flex flex-col items-center justify-center text-center p-4 shadow-[0_0_50px_rgba(234,179,8,0.3)] transform transition-transform duration-500 hover:scale-105">
-                            <ShieldCheck className="w-10 h-10 md:w-16 md:h-16 text-brand mb-2" />
-                            <span className="text-white font-black italic uppercase text-lg md:text-2xl tracking-tighter leading-none">GNOM</span>
-                            <span className="text-brand text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] mt-1">Mother Company</span>
+                        <div className="relative w-32 h-32 md:w-48 md:h-48 bg-white rounded-full border-4 border-brand flex flex-col items-center justify-center text-center p-4 shadow-[0_0_50px_rgba(14,165,233,0.2)] transform transition-transform duration-500 hover:scale-105 overflow-hidden">
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src={config.logo}
+                                    alt={config.companyName}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         </div>
                     </div>
 

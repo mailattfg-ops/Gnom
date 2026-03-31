@@ -6,7 +6,8 @@ export function JsonLd() {
         "@type": "LocalBusiness",
         "name": config.companyName,
         "description": "Premium engineering services in Electrical, Plumbing, HVAC, and more.",
-        "url": "https://www.gnom.com", // Placeholder
+        "url": "https://www.gnom.com",
+        "logo": `https://www.gnom.com${config.logo}`,
         "telephone": config.whatsappNumber,
         "address": {
             "@type": "PostalAddress",

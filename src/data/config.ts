@@ -1,5 +1,6 @@
 export const config = {
   companyName: "GNOM",
+  logo: "/images/logo.png",
   whatsappNumber: "+91 98475 07095",
   whatsappMessage: "Hello GNOM! I have an inquiry about your services.",
   primaryNumber: "+91 98475 07095",
